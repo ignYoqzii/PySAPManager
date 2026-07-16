@@ -18,7 +18,7 @@ PySAPManager enables you to:
 
 A static HTML file was generated with [pdoc](https://pdoc.dev/).
 
-View the documentation [here]().
+View the documentation [here](https://yoqzii.dev/PySAPManager/).
 
 ## Prerequisites
 
