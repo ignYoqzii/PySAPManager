@@ -131,7 +131,7 @@ Attributes:
     __version__ (str): The current version number of the package.
     __author__ (str): The author and maintainer of the package.
     __license__ (str): The license under which the package is distributed.
-    __all__ (list of str): The public API exposed by the package for `from pysapgui import *` usage.
+    __all__ (list of str): The public API exposed by the package for `from pysapmanager import *` usage.
 """
 
 from .application import SAPApplication
