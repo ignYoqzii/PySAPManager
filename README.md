@@ -14,6 +14,12 @@ PySAPManager enables you to:
 - Handle multi-threaded automation workflows
 - Work with Excel files within automated scripts
 
+## Documentation
+
+A static HTML file was generated with [pdoc](https://pdoc.dev/).
+
+View the documentation [here]().
+
 ## Prerequisites
 
 - **Windows** environment with COM support
@@ -119,6 +125,7 @@ with com_initialized():
 ### Core Classes
 
 **SAPManager**
+
 Main facade for SAP automation. Handles SAP Logon startup, connection management, and script execution orchestration.
 
 - `get_application()` - Access SAP GUI Scripting application
@@ -127,6 +134,7 @@ Main facade for SAP automation. Handles SAP Logon startup, connection management
 - `wait_all(*tasks)` - Wait for all async tasks to complete
 
 **SAPConfig**
+
 Configuration for SAP connections.
 
 - `sap_logon_path` - Path to saplogon.exe
@@ -134,12 +142,14 @@ Configuration for SAP connections.
 - Additional optional parameters for advanced configurations
 
 **SAPApplication**
+
 Access to SAP GUI Scripting application interface.
 
 - `open_connection()` - Open a SAP connection
 - `close()` - Close the application
 
 **SAPConnection**
+
 Represents an open SAP connection.
 
 - `first_session()` - Get the first available session
@@ -147,12 +157,14 @@ Represents an open SAP connection.
 - `close()` - Close the connection
 
 **SAPSession**
+
 Represents a SAP session for script execution.
 
 - `execute_script(request)` - Execute a script synchronously
 - `execute_script_async(request)` - Execute a script asynchronously
 
 **ScriptExecutionRequest**
+
 Parameters for script execution.
 
 - `script_path` - Path to the VBScript file
@@ -162,6 +174,7 @@ Parameters for script execution.
 ### Utility Functions
 
 **com_initialized()**
+
 Context manager for proper COM initialization in multi-threaded environments.
 
 ```python
@@ -171,6 +184,7 @@ with com_initialized():
 ```
 
 **set_logging_enabled(enabled)**
+
 Globally enable or disable all library logging.
 
 ```python
@@ -180,6 +194,7 @@ set_logging_enabled(False)  # Silence all PySAPManager log output
 ```
 
 **is_logging_enabled()**
+
 Check the current global logging state.
 
 ```python
@@ -236,7 +251,7 @@ config = SAPConfig(
 - **Async Execution** - Non-blocking script execution with parallel control
 - **COM Support** - Proper handling of COM in multi-threaded environments
 - **Process Management** - Automatic SAP Logon startup and supervision
-- **Plug and Play** - Use recorded scripts from SAP and use them with the manager easily
+- **Plug and Play** - Easily use pre-recorded scripts from SAP with the manager
 
 ## Error Handling
 
@@ -314,7 +329,7 @@ with com_initialized():
 
 ### Scripts Timeouts
 
-Increase timeout values in ScriptExecutionRequest if your script takes longer to finish:
+Increase timeout values in `ScriptExecutionRequest()` if your script takes longer to finish:
 
 ```python
 request = ScriptExecutionRequest(
