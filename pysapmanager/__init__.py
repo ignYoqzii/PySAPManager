@@ -28,7 +28,7 @@ recorded from SAP GUI, and orchestrating parallel executions while respecting CO
 ## Quick Start Example
 
 ```python
-from pysapgui import SAPManager, SAPConfig, ScriptExecutionRequest
+from pysapmanager import SAPManager, SAPConfig, ScriptExecutionRequest
 
 config = SAPConfig(
     sap_logon_path=r"C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPGUI\\saplogon.exe",
@@ -56,7 +56,7 @@ logger (or a custom logger you provide). To silence all log output from the
 library process-wide:
 
 ```python
-from pysapgui import set_logging_enabled
+from pysapmanager import set_logging_enabled
 
 set_logging_enabled(False)  # silence PySAPManager everywhere, including custom loggers
 ```
@@ -72,7 +72,7 @@ with SAPManager(config=config, enable_logging=False) as manager:
 ## Multi-Threaded Example
 
 ```python
-from pysapgui import SAPManager, SAPConfig, ScriptExecutionRequest, com_initialized
+from pysapmanager import SAPManager, SAPConfig, ScriptExecutionRequest, com_initialized
 
 config = SAPConfig(
     sap_logon_path=r"C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPGUI\\saplogon.exe",
